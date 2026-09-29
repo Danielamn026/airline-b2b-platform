@@ -159,19 +159,3 @@ cd backend
 ./mvnw clean install
 ./mvnw spring-boot:run
 ```
-
-## 📌 Estado del proyecto
-
-Este repositorio está orientado a un proyecto académico y de práctica profesional con enfoque en arquitectura de software, servicios backend, integración con bases de datos y despliegue con contenedores.
-
-## 🤝 Autor
-
-Daniela M. N.
-
-Repositorio: [Danielamn026/airline-b2b-platform](https://github.com/Danielamn026/airline-b2b-platform)
-
-## 💡 Objetivo
-
-Mostrar una solución completa de plataforma B2B para aerolíneas, con un enfoque claro en modularidad, limpieza de arquitectura y facilidad de ejecución local.
-
-Si quieres, también puedo dejarte una versión más premium, más breve o con estilo más "portfolio/profesional" para que se vea aún mejor al abrir el repositorio.

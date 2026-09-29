@@ -1,107 +1,177 @@
 # Airline Service B2B
 
-A modern B2B airline service platform built with a modular architecture that separates the user-facing frontend from the backend business services. The project is designed to support airline operations, service orchestration, and business workflows in a clean and scalable way.
+Plataforma moderna para operar y gestionar servicios B2B del ecosistema de aerolíneas, con una arquitectura modular que separa la experiencia de usuario del backend y la lógica de negocio.
 
-## Overview
+Este repositorio reúne la aplicación frontend, la API backend y la infraestructura necesaria para ejecutar el proyecto de forma local y reproducible con Docker.
 
-This repository contains the complete source code for the Airline Service B2B platform, including:
+## ✨ Descripción general
 
-- Angular frontend for the web application
-- Java Spring Boot backend for APIs and business logic
-- PostgreSQL database integration
-- Docker-based runtime setup for local development and deployment
-- Environment configuration files for service isolation and setup consistency
+La solución está pensada para representar un sistema de negocio de aerolíneas con una estructura clara y mantenible:
 
-The project is structured to support clear separation of concerns and easier maintainability as the platform grows.
+- Frontend en Angular para la interfaz web
+- Backend en Java + Spring Boot para APIs y lógica de negocio
+- Persistencia con PostgreSQL
+- Ejecución local con Docker Compose
+- Configuración por entorno para facilitar despliegues y pruebas
 
-## Architecture
+## 🧩 Características principales
 
-The solution is organized in two main layers:
+- Arquitectura dividida por capas: frontend y backend
+- Interfaz moderna con Angular + Tailwind CSS
+- API REST construida con Spring Boot
+- Validación de entrada, persistence y lógica de negocio separada
+- Base de datos gestionada con PostgreSQL
+- Entorno listo para correr con Docker y Docker Compose
+- Estructura preparada para crecer hacia más módulos o servicios
 
-- Frontend: Angular application with modern UI practices and Tailwind styling
-- Backend: Spring Boot application with REST APIs, persistence layer, validation, and service logic
-
-### Runtime Components
-
-- Frontend application running on port 4200
-- Backend API running on port 8080
-- PostgreSQL database configured through environment variables
-- Docker Compose orchestrates the application services
-
-## Repository Structure
+## 🏗️ Arquitectura del proyecto
 
 ```text
-airline-service-b2b/
-├── backend/
-│   ├── .env.template
-│   ├── .mvn/
+airline-b2b-platform/
+├── backend/                  # API REST y lógica de negocio
 │   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/
-│   │   │   └── resources/
-│   │   └── test/
+│   ├── .env.template
 │   ├── Dockerfile
 │   ├── pom.xml
 │   ├── mvnw
-│   ├── mvnw.cmd
-│   └── http-tests/
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   ├── Dockerfile
-│   ├── angular.json
-│   ├── package.json
-│   ├── tsconfig.json
-│   ├── README.md
 │   └── ...
-├── docker-compose.yml
+├── frontend/                 # Aplicación Angular
+│   ├── src/
+│   ├── package.json
+│   ├── angular.json
+│   ├── Dockerfile
+│   └── ...
+├── docker-compose.yml        # Orquestación de servicios
 ├── .gitignore
-└── README.md
+├── README.md
+└── ...
 ```
-## Tech Stack
+
+### Componentes principales
+
+- Frontend: aplicación web en Angular 21
+- Backend: API REST en Spring Boot 4 con Java 17+
+- Base de datos: PostgreSQL
+- Infraestructura: Docker Compose para levantar el entorno
+
+## 🛠️ Stack tecnológico
 
 ### Frontend
 
-| Technology | Version | Purpose |
-|---|---|---|
-| Angular | 21.2.0 | Framework |
-| TypeScript | 5.9.2 | Language |
-| Tailwind CSS | 4.2.2 | Styling |
-| SCSS | Latest | Advanced styling |
-| Vite/Vitest | 4.0.8 | Testing |
-| PostCSS | 8.5.8 | CSS Processing |
-| Prettier | 3.8.1 | Code formatting |
+- Angular
+- TypeScript
+- Tailwind CSS
+- SCSS
+- Vitest
 
 ### Backend
 
-| Technology | Version | Purpose |
-|---|---|---|
-| Java | 17+ | Language |
-| Spring Boot | 4.0.5 | Framework |
-| Spring Web | Latest | REST APIs |
-| Spring Data JPA | Latest | Persistence |
-| PostgreSQL Driver | Latest | Database driver |
-| Spring Validation | Latest | Input validation |
-| MapStruct | 1.6.3 | Object mapping |
-| Lombok | Latest | Code generation |
+- Java 17+
+- Spring Boot
+- Spring Web
+- Spring Data JPA
+- Spring Validation
+- PostgreSQL Driver
+- MapStruct
+- Lombok
 
-### Infrastructure
+### Infraestructura
 
-| Technology | Version | Purpose |
-|---|---|---|
-| Docker | Latest | Containerization |
-| Docker Compose | Latest | Orchestration |
-| NGINX | Latest | Frontend serving |
-| PostgreSQL | 12+ | Database |
+- Docker
+- Docker Compose
+- PostgreSQL
 
-## Prerequisites
+## 🚀 Inicio rápido
 
-Before running the project, ensure you have the following installed:
+### Prerrequisitos
 
-- **Java 17** or newer
-- **Maven** (or use the included Maven wrapper: `./mvnw`)
-- **Node.js** 18 or newer
-- **npm** 10.9.2 or newer
-- **Docker** and **Docker Compose** (for containerized setup)
-- **PostgreSQL** 12 or newer (if running without Docker)
+Asegúrate de tener instalado:
 
+- Java 17 o superior
+- Maven o el wrapper incluido (`./mvnw`)
+- Node.js 18+
+- npm
+- Docker y Docker Compose
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/Danielamn026/airline-b2b-platform.git
+cd airline-b2b-platform
+```
+
+### 2. Configurar variables de entorno
+
+Copia el archivo de ejemplo del backend:
+
+```bash
+cp backend/.env.template backend/.env
+```
+
+Ajusta los valores de conexión a la base de datos y cualquier configuración necesaria.
+
+### 3. Ejecutar el proyecto
+
+Con Docker Compose:
+
+```bash
+docker compose up --build
+```
+
+Esto levantará:
+
+- Frontend: http://localhost:4200
+- Backend: http://localhost:8080
+- Base de datos: PostgreSQL en la red interna del contenedor
+
+## 📁 Estructura funcional
+
+- `frontend/`: interfaz de usuario y experiencia web
+- `backend/`: servicios REST, entidades, repositorios y lógica de negocio
+- `docker-compose.yml`: definición de servicios para entorno de desarrollo
+
+## 🔐 Variables de entorno
+
+El proyecto usa variables de entorno para la configuración de la base de datos y servicios.
+
+Ejemplo típico:
+
+```env
+DB_URL=jdbc:postgresql://localhost:5432/airline_db
+DB_USERNAME=postgres
+DB_PASSWORD=your_password
+```
+
+## 🧪 Desarrollo
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+### Backend
+
+```bash
+cd backend
+./mvnw clean install
+./mvnw spring-boot:run
+```
+
+## 📌 Estado del proyecto
+
+Este repositorio está orientado a un proyecto académico y de práctica profesional con enfoque en arquitectura de software, servicios backend, integración con bases de datos y despliegue con contenedores.
+
+## 🤝 Autor
+
+Daniela M. N.
+
+Repositorio: [Danielamn026/airline-b2b-platform](https://github.com/Danielamn026/airline-b2b-platform)
+
+## 💡 Objetivo
+
+Mostrar una solución completa de plataforma B2B para aerolíneas, con un enfoque claro en modularidad, limpieza de arquitectura y facilidad de ejecución local.
+
+Si quieres, también puedo dejarte una versión más premium, más breve o con estilo más "portfolio/profesional" para que se vea aún mejor al abrir el repositorio.

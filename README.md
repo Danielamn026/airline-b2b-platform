@@ -57,3 +57,51 @@ airline-service-b2b/
 ├── docker-compose.yml
 ├── .gitignore
 └── README.md
+```
+## Tech Stack
+
+### Frontend
+
+| Technology | Version | Purpose |
+|---|---|---|
+| Angular | 21.2.0 | Framework |
+| TypeScript | 5.9.2 | Language |
+| Tailwind CSS | 4.2.2 | Styling |
+| SCSS | Latest | Advanced styling |
+| Vite/Vitest | 4.0.8 | Testing |
+| PostCSS | 8.5.8 | CSS Processing |
+| Prettier | 3.8.1 | Code formatting |
+
+### Backend
+
+| Technology | Version | Purpose |
+|---|---|---|
+| Java | 17+ | Language |
+| Spring Boot | 4.0.5 | Framework |
+| Spring Web | Latest | REST APIs |
+| Spring Data JPA | Latest | Persistence |
+| PostgreSQL Driver | Latest | Database driver |
+| Spring Validation | Latest | Input validation |
+| MapStruct | 1.6.3 | Object mapping |
+| Lombok | Latest | Code generation |
+
+### Infrastructure
+
+| Technology | Version | Purpose |
+|---|---|---|
+| Docker | Latest | Containerization |
+| Docker Compose | Latest | Orchestration |
+| NGINX | Latest | Frontend serving |
+| PostgreSQL | 12+ | Database |
+
+## Prerequisites
+
+Before running the project, ensure you have the following installed:
+
+- **Java 17** or newer
+- **Maven** (or use the included Maven wrapper: `./mvnw`)
+- **Node.js** 18 or newer
+- **npm** 10.9.2 or newer
+- **Docker** and **Docker Compose** (for containerized setup)
+- **PostgreSQL** 12 or newer (if running without Docker)
+
